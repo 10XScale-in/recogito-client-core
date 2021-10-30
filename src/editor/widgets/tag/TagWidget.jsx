@@ -63,6 +63,9 @@ const TagWidget = props => {
             {...draftTag, value: tag.label, source: tag.uri} :
             {...draftTag, value: tag};
 
+        // if its already tagged return
+        if (tags.length > 0) return;
+
         if (draftTag.value.trim().length === 0) {
             props.onAppendBody(toSubmit);
         } else {
